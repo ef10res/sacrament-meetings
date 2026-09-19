@@ -27,10 +27,11 @@ export interface SacramentMeeting {
     conducting: string;
     announcements?: string[];
     openingHymn: Hymn;
-    wardBusness: WardBusinessItem[];
+    wardBusiness: WardBusinessItem[];
     stakeBusiness: boolean;
     sacramentHymn: Hymn;
     speakers: SpeakerItem[];
     closingHymn: Hymn;
     closingPrayer: string;
 }
+

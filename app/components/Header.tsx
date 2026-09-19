@@ -1,16 +1,21 @@
-import Link from 'next/link';
+import NavLinks from './NavLinks';
+import React from 'react';
 
 export default function Header() {
+    const currentDate = new Date().toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
     return (
-        <header className="bg-gray-800 text-white p-4 shadow-md">
-            <div id="header-title" className="container mx-auto flex justify-between items-center">Erick Flores</div>
-            <nav className="max-w-4xl mx-auto flex space-x-4 justify-center items-center">
-                <ul className="flex gap-4">
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/current">Current</Link></li>
-                    <li><Link href="/past">Past</Link></li>
-                </ul>
-            </nav>
+        <header className="border-b-2 border-gray-300 p-4">
+            <div className="mx-auto">
+                <h1 className="text-2xl font-bold">Davis YSA Ward</h1>
+                <p className="text-sm text-blue-800">{currentDate}</p>
+                <NavLinks />
+            </div>
         </header>
     );
 }
