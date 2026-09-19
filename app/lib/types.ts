@@ -5,7 +5,7 @@ export type MeetingType =
     | 'general';
 
 export interface Hymn {
-    number: number;
+    number: number; 
     title: string;
 }
 
