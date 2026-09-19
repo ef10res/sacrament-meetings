@@ -27,6 +27,7 @@ export interface SacramentMeeting {
     conducting: string;
     announcements?: string[];
     openingHymn: Hymn;
+    openingPrayer: string;
     wardBusiness: WardBusinessItem[];
     stakeBusiness: boolean;
     sacramentHymn: Hymn;

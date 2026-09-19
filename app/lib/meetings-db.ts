@@ -14,7 +14,7 @@ const meetings: SacramentMeeting[] = [
         sacramentHymn: { number: 169, title: "In Remembrance of Thy Suffering" },
         speakers: [
             { name: 'Sister Brown', topic: 'Faith in Jesus Christ', type: 'speaker' },
-            { name: 'Youth Choir', topic: '', type: 'musical-number' }
+            { name: 'Youth Choir', topic: '', type: 'musical number' }
         ],
         closingHymn: { number: 31, title: 'O God, Our Help in Ages Past' },
         closingPrayer: 'Brother Davis',
@@ -34,7 +34,7 @@ const meetings: SacramentMeeting[] = [
         sacramentHymn: { number: 169, title: "In Remembrance of Thy Suffering" },
         speakers: [
             { name: 'Sister Brown', topic: 'Faith in Jesus Christ', type: 'speaker' },
-            { name: 'Youth Choir', topic: '', type: 'musical-number' }
+            { name: 'Youth Choir', topic: '', type: 'musical number' }
         ],
         closingHymn: { number: 31, title: 'O God, Our Help in Ages Past' },
         closingPrayer: 'Brother Davis',
@@ -54,7 +54,7 @@ const meetings: SacramentMeeting[] = [
         sacramentHymn: { number: 169, title: "In Remembrance of Thy Suffering" },
         speakers: [
             { name: 'Sister Brown', topic: 'Faith in Jesus Christ', type: 'speaker' },
-            { name: 'Youth Choir', topic: '', type: 'musical-number' }
+            { name: 'Youth Choir', topic: '', type: 'musical number' }
         ],
         closingHymn: { number: 31, title: 'O God, Our Help in Ages Past' },
         closingPrayer: 'Brother Davis',
@@ -74,7 +74,7 @@ const meetings: SacramentMeeting[] = [
         sacramentHymn: { number: 169, title: "In Remembrance of Thy Suffering" },
         speakers: [
             { name: 'Sister Brown', topic: 'Faith in Jesus Christ', type: 'speaker' },
-            { name: 'Youth Choir', topic: '', type: 'musical-number' }
+            { name: 'Youth Choir', topic: '', type: 'musical number' }
         ],
         closingHymn: { number: 31, title: 'O God, Our Help in Ages Past' },
         closingPrayer: 'Brother Davis',
@@ -94,7 +94,7 @@ const meetings: SacramentMeeting[] = [
         sacramentHymn: { number: 169, title: "In Remembrance of Thy Suffering" },
         speakers: [
             { name: 'Sister Brown', topic: 'Faith in Jesus Christ', type: 'speaker' },
-            { name: 'Youth Choir', topic: '', type: 'musical-number' }
+            { name: 'Youth Choir', topic: '', type: 'musical number' }
         ],
         closingHymn: { number: 31, title: 'O God, Our Help in Ages Past' },
         closingPrayer: 'Brother Davis',
