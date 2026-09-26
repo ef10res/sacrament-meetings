@@ -1,8 +1,8 @@
-import MeetingCard from "../components/MeetingCard";
-import { getMeetings } from "../lib/meetings-db";
+import MeetingCard from "@/app/components/MeetingCard";
+import { getMeetings } from "@/app/lib/meetings-db";
 
-export default function MeetingsPage() {
-  const meetings = getMeetings();
+export default async function MeetingsPage() {
+  const meetings = await getMeetings();
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">

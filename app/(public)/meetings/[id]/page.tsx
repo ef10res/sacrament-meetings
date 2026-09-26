@@ -1,5 +1,5 @@
-import MeetingDetail from "../../components/MeetingDetail";
-import { getMeetingById } from "../../lib/meetings-db";
+import MeetingDetail from "@/app/components/MeetingDetail";
+import { getMeetingById } from "@/app/lib/meetings-db";
 
 export default async function MeetingPage({
     params,
@@ -9,7 +9,7 @@ export default async function MeetingPage({
     const { id } = await params;
 
     const meetingId = Number(id);
-    const meeting = getMeetingById(meetingId);
+    const meeting = await getMeetingById(meetingId);
 
     if (!meeting) {
         return <div>Meeting not found</div>;

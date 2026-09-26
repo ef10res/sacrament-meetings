@@ -7,7 +7,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     if (!Number.isInteger(meetingId)) {
         return new Response("Invalid meeting ID", { status: 400 });
     }
-    const meeting = getMeetingById(meetingId);
+    const meeting = await getMeetingById(meetingId);
     if (!meeting) {
         return new Response("Meeting not found", { status: 404 });
     }
