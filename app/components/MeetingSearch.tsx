@@ -20,7 +20,7 @@ export default function MeetingSearch() {
     }, 300);
 
     return (
-        <input
+        <input className="border rounded px-3 py-2 w-full"
             type="search"
             placeholder="Search by speaker, leader, or meeting type"
             defaultValue={searchParams.get('query')?.toString()}

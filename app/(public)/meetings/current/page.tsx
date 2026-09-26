@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getMeetings } from "../../lib/meetings-db";
+import { getMeetings } from "@/app/lib/meetings-db";
  
 export default async function CurrentMeetingPage() {
     const today = new Date();
