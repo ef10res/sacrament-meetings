@@ -79,16 +79,71 @@ export async function getMeetingById(
 export async function addMeeting(
     data: Omit<SacramentMeeting, 'id'>
 ): Promise<SacramentMeeting> {
-    throw new Error('addMeeting: database implementation coming in Week 04');
+    const { date, meetingType, presiding, conducting, announcements, openingHymn, openingPrayer, wardBusiness, stakeBusiness, sacramentHymn, speakers, closingHymn, closingPrayer } = data;
+    const rows = await sql`
+    INSERT INTO meetings (
+      date,
+      meeting_type,
+      presiding,
+      conducting,
+      announcements,
+      opening_hymn,
+      opening_prayer,
+      ward_business,
+      stake_business,
+      sacrament_hymn,
+      speakers,
+      closing_hymn,
+      closing_prayer
+    ) VALUES (
+      ${date},
+      ${meetingType},
+      ${presiding},
+      ${conducting},
+      ${announcements},
+      ${openingHymn},
+      ${openingPrayer},
+      ${wardBusiness},
+      ${stakeBusiness},
+      ${sacramentHymn},
+      ${speakers},
+      ${closingHymn},
+      ${closingPrayer}
+    )
+    RETURNING *;
+    `;
+    return rows[0] as unknown as SacramentMeeting;
 }
 
 export async function updateMeeting(
     id: number,
     updates: Partial<SacramentMeeting>
 ): Promise<SacramentMeeting | null> {
-    throw new Error('updateMeeting: database implementation coming in Week 04');
+    const { date, meetingType, presiding, conducting, announcements, openingHymn, openingPrayer, wardBusiness, stakeBusiness, sacramentHymn, speakers, closingHymn, closingPrayer } = updates;
+    const rows = await sql`
+    UPDATE meetings SET
+      date = COALESCE(${date ?? null}, date),
+      meeting_type = COALESCE(${meetingType ?? null}, meeting_type),
+      presiding = COALESCE(${presiding ?? null}, presiding),
+      conducting = COALESCE(${conducting ?? null}, conducting),
+      announcements = COALESCE(${announcements ?? null}, announcements),
+      opening_hymn = COALESCE(${openingHymn ?? null}, opening_hymn),
+      opening_prayer = COALESCE(${openingPrayer ?? null}, opening_prayer),
+      ward_business = COALESCE(${wardBusiness ?? null}, ward_business),
+      stake_business = COALESCE(${stakeBusiness ?? null}, stake_business),
+      sacrament_hymn = COALESCE(${sacramentHymn ?? null}, sacrament_hymn),
+      speakers = COALESCE(${speakers ?? null}, speakers),
+      closing_hymn = COALESCE(${closingHymn ?? null}, closing_hymn),
+      closing_prayer = COALESCE(${closingPrayer ?? null}, closing_prayer)
+    WHERE id = ${id}
+    RETURNING *;
+    `;
+    return (rows[0] as unknown as SacramentMeeting) ?? null;
 }
 
 export async function deleteMeeting(id: number): Promise<boolean> {
-    throw new Error('deleteMeeting: database implementation coming in Week 04');
+    const result = await sql`
+    DELETE FROM meetings WHERE id = ${id};
+    `;
+    return result.length > 0;
 }

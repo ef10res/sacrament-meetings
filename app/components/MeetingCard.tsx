@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SacramentMeeting } from '../lib/types';
+import { deleteMeetingAction } from '../lib/actions';
 
 interface MeetingCardProps {
     meeting: SacramentMeeting;
@@ -14,6 +15,11 @@ export default function MeetingCard({ meeting }: MeetingCardProps) {
             <Link href={`/meetings/${meeting.id}`} className="text-blue-500 hover:underline">
                 View Details
             </Link>
+            <form action={deleteMeetingAction.bind(null, meeting.id)} className="inline">
+                <button type="submit" className="text-red-500 hover:underline ml-4">
+                    Delete Meeting
+                </button>
+            </form>
         </div>
     );
 }

@@ -1,5 +1,7 @@
+
 import MeetingDetail from "@/app/components/MeetingDetail";
 import { getMeetingById } from "@/app/lib/meetings-db";
+import { notFound } from "next/navigation";
 
 export default async function MeetingPage({
     params,
@@ -9,6 +11,12 @@ export default async function MeetingPage({
     const { id } = await params;
 
     const meetingId = Number(id);
+
+    // Validate the ID before querying the database
+    if (!Number.isSafeInteger(meetingId) || meetingId <= 0) {
+        notFound();
+    }
+
     const meeting = await getMeetingById(meetingId);
 
     if (!meeting) {
