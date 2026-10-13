@@ -16,6 +16,9 @@ export default function NavLinks() {
                 <li>
                     <Link href="/meetings" className={pathname === '/meetings' ? 'font-semibold text-gray-900' : 'text-gray-800 hover:text-blue-900'}>Meetings</Link>
                 </li>
+                <li>
+                    <Link href="/login" className={pathname === '/login' ? 'font-semibold text-gray-900' : 'text-gray-800 hover:text-blue-900'}>Login</Link>
+                </li>
             </ul>
         </nav>
     );
