@@ -3,6 +3,28 @@ import { z } from 'zod';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { addMeeting, updateMeeting, deleteMeeting } from './meetings-db';
+import { signIn } from '@/auth';
+import { AuthError } from 'next-auth';
+
+export async function authenticate(
+    prevState: string | undefined,
+    formData: FormData,
+) {
+    try {
+        await signIn('credentials', formData);
+    } catch (error) {
+        if (error instanceof AuthError) {
+            switch (error.type) {
+                case 'CredentialsSignin':
+                    return 'Invalid email or password.';
+                default:
+                    return 'Something went wrong.';
+            }
+        }
+        throw error; // re-throw so Next.js handles redirects correctly
+    }
+}
+
 
 const MeetingFormSchema = z.object({
     date: z.string().min(1, 'Date is required'),

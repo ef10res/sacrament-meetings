@@ -2,6 +2,14 @@ import MeetingCard  from "@/app/components/MeetingCard";
 import { getMeetings, getMeetingsTotalPages } from "@/app/lib/meetings-db";
 import MeetingSearch from "@/app/components/MeetingSearch";
 import Pagination from "@/app/components/Pagination";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Meetings',
+  description:
+    'Browse upcoming and past sacrament meetings, including meeting programs, hymns, prayers, and speakers.',
+};
+
 
 export default async function MeetingsPage(props: { searchParams?: Promise<{ query?: string; page?: string }> }) {
   const searchParams = await props.searchParams;
